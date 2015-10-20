@@ -1,0 +1,26 @@
+<%= form_for(@flashcard) do |f| %>
+  <% if @flashcard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@flashcard.errors.count, "error") %> prohibited this flashcard from being saved:</h2>
+
+      <ul>
+      <% @flashcard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, :minlength => 1 %>
+  </div>
+  <div class="field">
+    <%= f.label :answer %>
+    <%= f.text_field :answer, value: @flashcard.answer %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

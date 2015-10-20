@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
  
+  resources :flashcards
+ 
   get 'home/index'
 
   root 'home#index'

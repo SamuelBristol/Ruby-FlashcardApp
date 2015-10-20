@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @flashcard.title %></h1>
+<p><%= @flashcard.answer %></p>
+
+<%= link_to 'Edit', edit_flashcard_path(@flashcard) %> |
+<%= link_to 'Back', flashcards_path %>
