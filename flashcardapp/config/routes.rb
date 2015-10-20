@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
   
   resources :flashcards, :concerns => :paginatable
-  resources :tags
+  resources :tags, :drills
   
   get 'home/index'
 
