@@ -69,6 +69,6 @@ class FlashcardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flashcard_params
-      params.require(:flashcard).permit(:title, :answer)
+      params.require(:flashcard).permit(:title, :answer, :tag_list)
     end
 end
