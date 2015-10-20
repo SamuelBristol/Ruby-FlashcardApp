@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class FlashcardTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should create a valid record" do
+    flashcard = Flashcard.new
+    assert flashcard.save
+  end
 end
