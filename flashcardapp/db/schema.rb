@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151020091746) do
+ActiveRecord::Schema.define(version: 20151020202516) do
+
+  create_table "drillings", force: :cascade do |t|
+    t.integer  "drill_id"
+    t.integer  "flashcard_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "drillings", ["drill_id"], name: "index_drillings_on_drill_id"
+  add_index "drillings", ["flashcard_id"], name: "index_drillings_on_flashcard_id"
+
+  create_table "drills", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "flashcards", force: :cascade do |t|
     t.string   "title"
