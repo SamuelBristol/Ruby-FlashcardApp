@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
+    <%= f.label :title %><br>
     <%= f.text_field :title, :minlength => 1 %>
   </div>
   <div class="field">
-    <%= f.label :answer %>
-    <%= f.text_field :answer, value: @flashcard.answer %>
+    <%= f.label :answer %><br>
+    <%= f.text_area :answer, value: @flashcard.answer %>
   </div>
 
   <div class="actions">
