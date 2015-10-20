@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
- 
-  resources :flashcards
+  
+  concern :paginatable do
+    get '(page/:page)', :action => :index, :on => :collection, :as => ''
+  end
+  
+  resources :flashcards, :concerns => :paginatable
  
   get 'home/index'
 

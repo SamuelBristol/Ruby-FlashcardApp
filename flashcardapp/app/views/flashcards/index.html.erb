@@ -2,6 +2,8 @@
 
 <h1>Listing Flashcards</h1>
 
+<%= link_to 'New Flashcard', new_flashcard_path %>
+
 <table>
   <thead>
     <tr>
@@ -23,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Flashcard', new_flashcard_path %>
+<%= paginate @flashcards %>
