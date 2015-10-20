@@ -18,7 +18,10 @@ class FlashcardsControllerTest < ActionController::TestCase
 
   test "should create flashcard" do
     assert_difference('Flashcard.count') do
-      post :create, flashcard: {  }
+      post :create, flashcard: {title: 'test', 
+                                answer: 'test', 
+                                created_at: Time.now, 
+                                updated_at: Time.now}
     end
 
     assert_redirected_to flashcard_path(assigns(:flashcard))
@@ -35,7 +38,9 @@ class FlashcardsControllerTest < ActionController::TestCase
   end
 
   test "should update flashcard" do
-    patch :update, id: @flashcard, flashcard: {  }
+    patch :update, id: @flashcard, flashcard: { title: @flashcard.title, 
+                                                answer: @flashcard.answer }
+                                                
     assert_redirected_to flashcard_path(assigns(:flashcard))
   end
 
