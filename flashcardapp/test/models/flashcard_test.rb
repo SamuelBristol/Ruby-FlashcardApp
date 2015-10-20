@@ -14,4 +14,11 @@ class FlashcardTest < ActiveSupport::TestCase
     flashcard.title = "a"
     assert flashcard.save
   end
+  
+  test "answer should be at least 1 character" do
+    flashcard = Flashcard.new
+    flashcard.title = "a"
+    flashcard.answer = ""
+    assert !flashcard.save
+  end
 end
