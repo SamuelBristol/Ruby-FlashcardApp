@@ -4,7 +4,7 @@ class FlashcardsController < ApplicationController
   # GET /flashcards
   # GET /flashcards.json
   def index
-    @flashcards = Flashcard.all
+      @flashcards = Flashcard.order(:title).page(params[:page]).per(5)
   end
 
   # GET /flashcards/1
