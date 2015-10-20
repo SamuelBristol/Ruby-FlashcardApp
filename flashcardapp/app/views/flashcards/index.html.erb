@@ -12,7 +12,7 @@
   <tbody>
     <% @flashcards.each do |flashcard| %>
       <tr>
-        <td><%= link_to 'Show', flashcard %></td>
+        <td><%= link_to flashcard.title, flashcard %></td>
         <td><%= link_to 'Edit', edit_flashcard_path(flashcard) %></td>
         <td><%= link_to 'Destroy', flashcard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
