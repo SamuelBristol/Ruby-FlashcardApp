@@ -8,7 +8,8 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th colspan="2">Actions</th>
+      <th>Tags</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -16,6 +17,11 @@
     <% @flashcards.each do |flashcard| %>
       <tr>
         <td><%= link_to flashcard.title, flashcard %></td>
+        <td>
+          <% flashcard.tags.each do |tag| %>
+            <%= link_to tag.name, tag_path(tag) %>
+          <% end %>
+        </td>
         <td><%= link_to 'Edit', edit_flashcard_path(flashcard) %></td>
         <td><%= link_to 'Destroy', flashcard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

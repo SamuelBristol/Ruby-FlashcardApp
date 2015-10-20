@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Flashcards tagged with <%= @tag.name %></h1>
+<ul>
+  <% @tag.flashcards.each do |flashcard| %>
+    <li><%= link_to flashcard.title, flashcard_path(flashcard) %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Back', flashcards_path %>
