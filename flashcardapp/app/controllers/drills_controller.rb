@@ -19,6 +19,7 @@ class DrillsController < ApplicationController
 
   # GET /drills/1/edit
   def edit
+    @flashcards = Flashcard.all
   end
 
   # POST /drills

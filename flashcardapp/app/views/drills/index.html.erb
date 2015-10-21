@@ -1,20 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Drills</h1>
-
+<%= link_to 'New Drill', new_drill_path %>
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th colspan="3"></th>
+      <th colspan="3">Actions</th>
     </tr>
   </thead>
 
   <tbody>
     <% @drills.each do |drill| %>
       <tr>
-        <td><%= drill.name %></td>
-        <td><%= link_to 'Show', drill %></td>
+        <td><%= link_to drill.name, drill %></td>
         <td><%= link_to 'Edit', edit_drill_path(drill) %></td>
         <td><%= link_to 'Destroy', drill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -24,4 +23,4 @@
 
 <br>
 
-<%= link_to 'New Drill', new_drill_path %>
+
