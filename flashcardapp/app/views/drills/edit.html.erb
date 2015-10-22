@@ -1,0 +1,22 @@
+<h1>Editing Drill</h1>
+
+<%= render 'form' %>
+
+<h3>Add Flashcards to Drill</h3>
+<% @flashcards.each do |flashcard| %>
+    <p>
+    <%= flashcard.title %>
+    <%= link_to '+', new_drilling_path(@drill, flashcard), method: :post %>
+    </p>
+<% end %>
+
+<h3>Remove Flashcards from Drill</h3>
+<% @drill.flashcards.each do |flashcard| %>
+    <p>
+    <%= flashcard.title %>
+    <%= link_to '+', destroy_drilling_path(@drill, flashcard), method: :delete %>
+    </p>
+<% end %>
+
+<%= link_to 'Show', @drill %> |
+<%= link_to 'Back', drills_path %>

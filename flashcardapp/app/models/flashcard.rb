@@ -2,6 +2,8 @@ class Flashcard < ActiveRecord::Base
     validates_presence_of :title, :answer
     has_many :taggings
     has_many :tags, through: :taggings
+    has_many :drillings
+    has_many :drills, through: :drillings
     
     def tag_list=(input_tags)
         # Get a unique list of strings from input
