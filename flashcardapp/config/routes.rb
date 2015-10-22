@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   
+  match 'drillings/create/:drill_id/:flashcard_id' => 'drillings#create', :via => :post, as: 'create_drilling'
+  match 'drillings/destroy/:drill_id/:flashcard_id' => 'drillings#destroy', :via => :delete, as: 'destroy_drilling'
+
   concern :paginatable do
     get '(page/:page)', :action => :index, :on => :collection, :as => ''
   end
   
   resources :flashcards, :concerns => :paginatable
-  resources :tags, :drills
+  resources :drills, :concerns => :paginatable
+  resources :tags
   
   get 'home/index'
 
