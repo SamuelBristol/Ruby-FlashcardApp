@@ -4,7 +4,7 @@ class DrillsController < ApplicationController
   # GET /drills
   # GET /drills.json
   def index
-    @drills = Drill.all
+    @drills = Drill.order(:name).page(params[:page]).per(5)
   end
 
   # GET /drills/1
@@ -19,7 +19,8 @@ class DrillsController < ApplicationController
 
   # GET /drills/1/edit
   def edit
-    @flashcards = Flashcard.all
+    @drillcard_ids = @drill.flashcards.select(:id)
+    @flashcards = Flashcard.where('id NOT IN (?)', @drillcard_ids)
   end
 
   # POST /drills
@@ -70,6 +71,6 @@ class DrillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def drill_params
-      params.require(:drill).permit(:name)
+      params.require(:drill).permit(:name, :flashcard_id)
     end
 end
