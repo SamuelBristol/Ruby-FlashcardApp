@@ -5,5 +5,13 @@
   <%= @drill.name %>
 </p>
 
+<h3>Flashcards Currently in Drill</h3>
+<ul>
+<% @drill.flashcards.each do |flashcard| %>
+    <li>
+    <%= link_to flashcard.title, flashcard_path(flashcard) %>
+    </li>
+<% end %>
+</ul>
 <%= link_to 'Edit', edit_drill_path(@drill) %> |
 <%= link_to 'Back', drills_path %>
