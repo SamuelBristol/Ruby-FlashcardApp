@@ -1,6 +1,6 @@
 class DrillingsController < ApplicationController
-  before_action :set_drill, only: [:new, :destroy]
-  before_action :set_flashcard, only: [:new, :destroy]
+  before_action :set_drill, only: [:create, :destroy]
+  before_action :set_flashcard, only: [:create, :destroy]
   
   def create
     @drill.flashcards << @flashcard

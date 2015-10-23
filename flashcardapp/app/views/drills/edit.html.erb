@@ -6,7 +6,7 @@
 <% @flashcards.each do |flashcard| %>
     <p>
     <%= flashcard.title %>
-    <%= link_to '+', new_drilling_path(@drill, flashcard), method: :post %>
+    <%= link_to '+', create_drilling_path(@drill, flashcard), method: :post %>
     </p>
 <% end %>
 
